@@ -1,17 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
-type Number struct {
+type number struct {
 	value int
 	index int
 }
 
 func TwoSum(nums []int, target int) []int {
-	indexedNums := make([]Number, len(nums))
+	indexedNums := make([]number, len(nums))
 	for index, value := range nums {
 		indexedNums[index].value = value
 		indexedNums[index].index = index
@@ -32,9 +31,5 @@ func TwoSum(nums []int, target int) []int {
 		}
 	}
 
-	return []int{0, 0}
-}
-
-func main() {
-	fmt.Println(TwoSum([]int{3, 2, 4}, 6))
+	return []int{-1, -1}
 }
