@@ -12,8 +12,10 @@ type number struct {
 func TwoSum(nums []int, target int) []int {
 	indexedNums := make([]number, len(nums))
 	for index, value := range nums {
-		indexedNums[index].value = value
-		indexedNums[index].index = index
+		indexedNums[index] = number{
+			value: value,
+			index: index,
+		}
 	}
 
 	sort.Slice(indexedNums, func(i, j int) bool {
